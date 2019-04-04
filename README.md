@@ -1,9 +1,16 @@
 # Endless
 
-[![CI Status](https://img.shields.io/travis/self.dealloc@protonmail.com/Endless.svg?style=flat)](https://travis-ci.org/self.dealloc@protonmail.com/Endless)
-[![Version](https://img.shields.io/cocoapods/v/Endless.svg?style=flat)](https://cocoapods.org/pods/Endless)
-[![License](https://img.shields.io/cocoapods/l/Endless.svg?style=flat)](https://cocoapods.org/pods/Endless)
-[![Platform](https://img.shields.io/cocoapods/p/Endless.svg?style=flat)](https://cocoapods.org/pods/Endless)
+Endless is a lighweight endless page indicator.
+
+## How to use
+
+Create a Endless Configuration
+```
+let configuration = Endless.Configuration()
+let endlessIndicator = Endless.Indicator()
+
+
+```
 
 ## Example
 
@@ -22,7 +29,9 @@ pod 'Endless'
 
 ## Author
 
-self.dealloc@protonmail.com, self.dealloc@googlemail.com
+Sebastian Boldt 
+
+www.sebastianboldt.com
 
 ## License
 
