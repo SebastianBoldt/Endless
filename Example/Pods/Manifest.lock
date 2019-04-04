@@ -1,0 +1,16 @@
+PODS:
+  - Endless (0.1.0)
+
+DEPENDENCIES:
+  - Endless (from `../`)
+
+EXTERNAL SOURCES:
+  Endless:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Endless: 688544f745f168c8100a6862f2d0958fc4acfeaa
+
+PODFILE CHECKSUM: 8ed792516f054f04cca90dc2a5cac7857a5b12ec
+
+COCOAPODS: 1.6.0

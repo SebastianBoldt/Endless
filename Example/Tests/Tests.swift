@@ -1,5 +1,4 @@
 import XCTest
-import Endless
 
 class Tests: XCTestCase {
     
