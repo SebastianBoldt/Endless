@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'Endless_Example' do
+  pod 'Endless', :path => '../'
+
+  target 'Endless_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
