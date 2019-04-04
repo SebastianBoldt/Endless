@@ -1,8 +1,8 @@
 {
   "name": "Endless",
   "version": "0.1.0",
-  "summary": "A short description of Endless.",
-  "description": "TODO: Add long description of the pod here.",
+  "summary": "Endless is a lighweight endless page indicator.",
+  "description": "Endless is a lighweight endless page indicator.",
   "homepage": "https://github.com/self.dealloc@protonmail.com/Endless",
   "license": {
     "type": "MIT",
