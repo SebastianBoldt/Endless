@@ -13,10 +13,12 @@ public final class PageIndicator: UIView {
     public var selectedIndex: Int = 0 {
         didSet {
             guard selectedIndex >= 0 else {
+                selectedIndex = 0
                 return
             }
             
             guard selectedIndex <= configuration.maxNumberOfPages else {
+                selectedIndex = configuration.maxNumberOfPages
                 return
             }
             
