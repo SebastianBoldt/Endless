@@ -8,17 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		013D0177EA6830764D89FE8470DF9553 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
-		03C74BC467CFD1669203B25735C04ECE /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24BDF4D16EAD500BB234E9FD150A0DC /* Metrics.swift */; };
+		0862BE5E5B24F76FC401857613DE7973 /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7D1A327046F8F1972A079BA4929238 /* Metrics.swift */; };
+		26786E6B6CF1001A9F225FD31E5B1716 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC00CF88448BFE2EC07228B8F5578EF0 /* Configuration.swift */; };
+		33DB749BCB8F986BE7BB7DB4D140613B /* Endless-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9639851AD93081396716527EDA7949B0 /* Endless-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3695B880338E9F23F4A46E17FD98E283 /* Pods-Endless_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CC2F4569251B91C91A4B962A6104CF /* Pods-Endless_Tests-dummy.m */; };
 		3895920380311B63436CD875CAF4ABF2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
-		4F5FE50749E63B19B1EB5CF1209D8EAA /* Endless-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB8E49BF103F8AFA261630ACC6164F7 /* Endless-dummy.m */; };
-		6F9D5FA257D94527B684D036FB37BE4A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
-		715B362687E3938502A5CD61DA21B60F /* PageIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8775AE290DB98C7C2BBBE841CEF8C9D4 /* PageIndicator.swift */; };
+		4A8E543229372E3E051018C2EE2F33E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
 		77C2E2EEC1A2EC3DB0425C10DBDEF560 /* Pods-Endless_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A12CC839B216919C6C4AA6B9B8E9D77E /* Pods-Endless_Example-dummy.m */; };
-		7F0A644525C215F72E77BB09A897A5C3 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12300A09BD10C4897CA7DE392349B7D0 /* Configuration.swift */; };
-		8BF8B8B44C7A0679FB15F2D4D083A965 /* Endless-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 822864F4F8554442362FA36C93D1E1A7 /* Endless-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7DD044BDCB80C24E13BD5AC9357B2406 /* Endless-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 989E0E3C2301E3CF925F58F9D10F6E80 /* Endless-dummy.m */; };
+		95B81D233CA8C76F27EFEF341B17DB4C /* IndicatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3576575055C96328F5A8FEBFD2E82C40 /* IndicatorCell.swift */; };
+		989E85E803C12AF1DB89C7C82A5D8811 /* IndicatorCellState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115F58AB98EAA756EDD74A5C3C10BF99 /* IndicatorCellState.swift */; };
 		99467DB675B00ACC19454328EC9C1A01 /* Pods-Endless_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A74C16C0647457F44EE41ED8296989DA /* Pods-Endless_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BF46FDBA2A290A28A6B434DA4F3D8CC9 /* Pods-Endless_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B99AF101FD55886DBBFD73A7AE69965A /* Pods-Endless_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F84340F11129282DDE3D14AF20F18C82 /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BA0250867B64346D973B40D6914796 /* Indicator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,7 +28,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = EAD3976F00CF5ADA330115072C2CF87D;
+			remoteGlobalIDString = 76F60D32109FB8DF4B7848547DE32AEB;
 			remoteInfo = Endless;
 		};
 		4E4373E07388AE50DB64D428D967E937 /* PBXContainerItemProxy */ = {
@@ -39,39 +41,41 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		12300A09BD10C4897CA7DE392349B7D0 /* Configuration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		115F58AB98EAA756EDD74A5C3C10BF99 /* IndicatorCellState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IndicatorCellState.swift; sourceTree = "<group>"; };
 		1778199D5A60A3129E68A8DCB50DF817 /* Pods-Endless_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Endless_Tests.modulemap"; sourceTree = "<group>"; };
 		1806796D17E1E0095353E06B2E709E84 /* Pods-Endless_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Endless_Example.release.xcconfig"; sourceTree = "<group>"; };
+		1A6349BE51C5B8BF1AE555400E4D28F5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		1F532558D343E1F2C653571702CCFE3F /* Pods-Endless_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Endless_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		2882588E84CA0D6608EFCF2A3159AAA5 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		2B03AFF001DF6D1EDFF948519376913D /* Pods-Endless_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Endless_Example-Info.plist"; sourceTree = "<group>"; };
-		3BF137F5DF24CAB4C6FBA389A4586D93 /* Endless-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Endless-Info.plist"; sourceTree = "<group>"; };
+		3576575055C96328F5A8FEBFD2E82C40 /* IndicatorCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IndicatorCell.swift; sourceTree = "<group>"; };
+		3DCAB722D9D827A58CEE6F09EA3C8CC5 /* Endless-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Endless-prefix.pch"; sourceTree = "<group>"; };
 		46167DBB9185F42AA14AED73FD31B69A /* Pods-Endless_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Endless_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		4B4A0C5E5F63B8BF580AF307CF00D431 /* Endless.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = Endless.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		4F9D4DBE28AD7CC392704A281B9BC8AE /* Pods-Endless_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Endless_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		5AB041E0A1D2AFC66B3805F76B7BA4FB /* Endless-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Endless-Info.plist"; sourceTree = "<group>"; };
 		5F863B5C6ED6A7A2AF342FAC3CA65D72 /* Pods-Endless_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Endless_Example.modulemap"; sourceTree = "<group>"; };
-		6D8ECFE6B37950176D562945FE67FC07 /* Endless-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Endless-prefix.pch"; sourceTree = "<group>"; };
 		757A4BACD277CED1BB1D8E2A1A09083A /* Pods-Endless_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Endless_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		822864F4F8554442362FA36C93D1E1A7 /* Endless-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Endless-umbrella.h"; sourceTree = "<group>"; };
-		8775AE290DB98C7C2BBBE841CEF8C9D4 /* PageIndicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PageIndicator.swift; sourceTree = "<group>"; };
+		8009DDBFDB0629D7D046BD9628A067A8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		9639851AD93081396716527EDA7949B0 /* Endless-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Endless-umbrella.h"; sourceTree = "<group>"; };
+		989E0E3C2301E3CF925F58F9D10F6E80 /* Endless-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Endless-dummy.m"; sourceTree = "<group>"; };
 		98BA584802764FEA4886CFEA9BD51568 /* Pods_Endless_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Endless_Tests.framework; path = "Pods-Endless_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9CB8E49BF103F8AFA261630ACC6164F7 /* Endless-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Endless-dummy.m"; sourceTree = "<group>"; };
-		9D090E8B996EA4E55C24AE1BFBB87DD5 /* Endless.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Endless.modulemap; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9DC2C6B8809A5FD19DD78147BD707070 /* Endless.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = Endless.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9F0D54C0D9FADA0037E83C5A6883F24B /* Endless.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Endless.framework; path = Endless.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A12CC839B216919C6C4AA6B9B8E9D77E /* Pods-Endless_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Endless_Example-dummy.m"; sourceTree = "<group>"; };
 		A74C16C0647457F44EE41ED8296989DA /* Pods-Endless_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Endless_Tests-umbrella.h"; sourceTree = "<group>"; };
-		B24BDF4D16EAD500BB234E9FD150A0DC /* Metrics.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
-		B3A50C30AF0B8B2B951EB098795DAC40 /* Endless.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Endless.xcconfig; sourceTree = "<group>"; };
+		B3BA0250867B64346D973B40D6914796 /* Indicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Indicator.swift; sourceTree = "<group>"; };
 		B99AF101FD55886DBBFD73A7AE69965A /* Pods-Endless_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Endless_Example-umbrella.h"; sourceTree = "<group>"; };
+		BC7D1A327046F8F1972A079BA4929238 /* Metrics.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
 		C1CC2F4569251B91C91A4B962A6104CF /* Pods-Endless_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Endless_Tests-dummy.m"; sourceTree = "<group>"; };
 		C5DF478F8CFBDE51A47FD4D70DC99DD2 /* Pods-Endless_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Endless_Tests-Info.plist"; sourceTree = "<group>"; };
+		C5EE462A0268AA1F6BAB7C20CAF1D9C9 /* Endless.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Endless.xcconfig; sourceTree = "<group>"; };
 		C8F8CE2A6E7A6D45F2EC4F89A1DE91C0 /* Pods-Endless_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Endless_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		D4BDF5CD643A016C40FA683E15ABAD48 /* Pods-Endless_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Endless_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		DB87393C588838BCC201D4D368BFA0F1 /* Pods-Endless_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Endless_Example-frameworks.sh"; sourceTree = "<group>"; };
+		DC00CF88448BFE2EC07228B8F5578EF0 /* Configuration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		E148C9523B23A3E42C0C8A00918CB6E0 /* Endless.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Endless.modulemap; sourceTree = "<group>"; };
 		E23EA5D890327E8039B5D8A0C5B1E8C7 /* Pods_Endless_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Endless_Example.framework; path = "Pods-Endless_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E9907C0D138DDD7E1C106546BF88FF72 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		FE5E7F680683D33B69D2F581210A8DA2 /* Pods-Endless_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Endless_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,14 +88,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		469B2C11BE907D08B97533922E09DCC1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6F9D5FA257D94527B684D036FB37BE4A /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		51BF036866617D5B86FC073A9690982C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -100,19 +96,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C208DE6C5C04BE1DF337638F76D7F1E6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A8E543229372E3E051018C2EE2F33E5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		09E8F1244BFB6B731A8EBE9F59498536 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				4B4A0C5E5F63B8BF580AF307CF00D431 /* Endless.podspec */,
-				2882588E84CA0D6608EFCF2A3159AAA5 /* LICENSE */,
-				E9907C0D138DDD7E1C106546BF88FF72 /* README.md */,
-			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
 		1785F931DA2A84042116586B66A315AE /* Pods-Endless_Example */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,39 +150,14 @@
 			path = "Target Support Files/Pods-Endless_Tests";
 			sourceTree = "<group>";
 		};
-		600D95894ADAFD8833323661E11BC951 /* Support Files */ = {
+		49EABE8F13966CE745F6AD03CA7589F5 /* private */ = {
 			isa = PBXGroup;
 			children = (
-				9D090E8B996EA4E55C24AE1BFBB87DD5 /* Endless.modulemap */,
-				B3A50C30AF0B8B2B951EB098795DAC40 /* Endless.xcconfig */,
-				9CB8E49BF103F8AFA261630ACC6164F7 /* Endless-dummy.m */,
-				3BF137F5DF24CAB4C6FBA389A4586D93 /* Endless-Info.plist */,
-				6D8ECFE6B37950176D562945FE67FC07 /* Endless-prefix.pch */,
-				822864F4F8554442362FA36C93D1E1A7 /* Endless-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/Endless";
-			sourceTree = "<group>";
-		};
-		61A1EE29EC2610E8E50B42EE009EC517 /* private */ = {
-			isa = PBXGroup;
-			children = (
-				B24BDF4D16EAD500BB234E9FD150A0DC /* Metrics.swift */,
+				115F58AB98EAA756EDD74A5C3C10BF99 /* IndicatorCellState.swift */,
+				BC7D1A327046F8F1972A079BA4929238 /* Metrics.swift */,
 			);
 			name = private;
 			path = Endless/Classes/private;
-			sourceTree = "<group>";
-		};
-		62FEFB372CD82136C5D2DB40FD6252FE /* Endless */ = {
-			isa = PBXGroup;
-			children = (
-				09E8F1244BFB6B731A8EBE9F59498536 /* Pod */,
-				61A1EE29EC2610E8E50B42EE009EC517 /* private */,
-				F476EA13D35179E9EA453E47A652D8DB /* public */,
-				600D95894ADAFD8833323661E11BC951 /* Support Files */,
-			);
-			name = Endless;
-			path = ../..;
 			sourceTree = "<group>";
 		};
 		63C14E418B44B67CB58413CD95726760 /* Targets Support Files */ = {
@@ -200,12 +169,47 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		7DA114B8C460B6C176D401468ED41494 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E148C9523B23A3E42C0C8A00918CB6E0 /* Endless.modulemap */,
+				C5EE462A0268AA1F6BAB7C20CAF1D9C9 /* Endless.xcconfig */,
+				989E0E3C2301E3CF925F58F9D10F6E80 /* Endless-dummy.m */,
+				5AB041E0A1D2AFC66B3805F76B7BA4FB /* Endless-Info.plist */,
+				3DCAB722D9D827A58CEE6F09EA3C8CC5 /* Endless-prefix.pch */,
+				9639851AD93081396716527EDA7949B0 /* Endless-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/Endless";
+			sourceTree = "<group>";
+		};
+		82368BE60990A1F09EB9B671BE6904D9 /* public */ = {
+			isa = PBXGroup;
+			children = (
+				DC00CF88448BFE2EC07228B8F5578EF0 /* Configuration.swift */,
+				B3BA0250867B64346D973B40D6914796 /* Indicator.swift */,
+				3576575055C96328F5A8FEBFD2E82C40 /* IndicatorCell.swift */,
+			);
+			name = public;
+			path = Endless/Classes/public;
+			sourceTree = "<group>";
+		};
 		9B055D0CFEA43187E72B03DED11F5662 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
 				CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */,
 			);
 			name = iOS;
+			sourceTree = "<group>";
+		};
+		BB80649F060A6464BAB01A61DC78DC88 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				9DC2C6B8809A5FD19DD78147BD707070 /* Endless.podspec */,
+				8009DDBFDB0629D7D046BD9628A067A8 /* LICENSE */,
+				1A6349BE51C5B8BF1AE555400E4D28F5 /* README.md */,
+			);
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -227,20 +231,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F476EA13D35179E9EA453E47A652D8DB /* public */ = {
+		E2A041C08338B7333BF8432E9F1E96BB /* Endless */ = {
 			isa = PBXGroup;
 			children = (
-				12300A09BD10C4897CA7DE392349B7D0 /* Configuration.swift */,
-				8775AE290DB98C7C2BBBE841CEF8C9D4 /* PageIndicator.swift */,
+				BB80649F060A6464BAB01A61DC78DC88 /* Pod */,
+				49EABE8F13966CE745F6AD03CA7589F5 /* private */,
+				82368BE60990A1F09EB9B671BE6904D9 /* public */,
+				7DA114B8C460B6C176D401468ED41494 /* Support Files */,
 			);
-			name = public;
-			path = Endless/Classes/public;
+			name = Endless;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		F597808E1FC53AD092AC065DCE872600 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				62FEFB372CD82136C5D2DB40FD6252FE /* Endless */,
+				E2A041C08338B7333BF8432E9F1E96BB /* Endless */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
@@ -264,11 +270,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DF6E535DD048DCC6E1104C993F705050 /* Headers */ = {
+		7BDDBA0A76E85F6BD718D19691101A8E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BF8B8B44C7A0679FB15F2D4D083A965 /* Endless-umbrella.h in Headers */,
+				33DB749BCB8F986BE7BB7DB4D140613B /* Endless-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,14 +319,14 @@
 			productReference = 98BA584802764FEA4886CFEA9BD51568 /* Pods_Endless_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		EAD3976F00CF5ADA330115072C2CF87D /* Endless */ = {
+		76F60D32109FB8DF4B7848547DE32AEB /* Endless */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1FED7DB0FEDFE253C2FB0B8F015EA9F7 /* Build configuration list for PBXNativeTarget "Endless" */;
+			buildConfigurationList = F379566BFF376080EFBE1CCB08EE0D54 /* Build configuration list for PBXNativeTarget "Endless" */;
 			buildPhases = (
-				DF6E535DD048DCC6E1104C993F705050 /* Headers */,
-				80B7D44E7F4BF9409BD4DFA391B356FB /* Sources */,
-				469B2C11BE907D08B97533922E09DCC1 /* Frameworks */,
-				28E3CFCC3C6682F556D1F832E4264F8D /* Resources */,
+				7BDDBA0A76E85F6BD718D19691101A8E /* Headers */,
+				C7B048EAC2219449EFE944737BE1C78C /* Sources */,
+				C208DE6C5C04BE1DF337638F76D7F1E6 /* Frameworks */,
+				E8B574C92CF8D48DBA8751C9C0FA2723 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -352,7 +358,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EAD3976F00CF5ADA330115072C2CF87D /* Endless */,
+				76F60D32109FB8DF4B7848547DE32AEB /* Endless */,
 				721BCE4BCC414E2A9EB42BA5BF83A81D /* Pods-Endless_Example */,
 				75C8B8B65B9DFCE06F060A40C241C1AB /* Pods-Endless_Tests */,
 			);
@@ -360,13 +366,6 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		28E3CFCC3C6682F556D1F832E4264F8D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		5AF10B6767BBB1D85517D693ED90E6D2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -381,25 +380,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		80B7D44E7F4BF9409BD4DFA391B356FB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
+		E8B574C92CF8D48DBA8751C9C0FA2723 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F0A644525C215F72E77BB09A897A5C3 /* Configuration.swift in Sources */,
-				4F5FE50749E63B19B1EB5CF1209D8EAA /* Endless-dummy.m in Sources */,
-				03C74BC467CFD1669203B25735C04ECE /* Metrics.swift in Sources */,
-				715B362687E3938502A5CD61DA21B60F /* PageIndicator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
 		9AEF107ACE098D93B33C10748197DC64 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				3695B880338E9F23F4A46E17FD98E283 /* Pods-Endless_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7B048EAC2219449EFE944737BE1C78C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26786E6B6CF1001A9F225FD31E5B1716 /* Configuration.swift in Sources */,
+				7DD044BDCB80C24E13BD5AC9357B2406 /* Endless-dummy.m in Sources */,
+				F84340F11129282DDE3D14AF20F18C82 /* Indicator.swift in Sources */,
+				95B81D233CA8C76F27EFEF341B17DB4C /* IndicatorCell.swift in Sources */,
+				989E85E803C12AF1DB89C7C82A5D8811 /* IndicatorCellState.swift in Sources */,
+				0862BE5E5B24F76FC401857613DE7973 /* Metrics.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,7 +431,7 @@
 		4C6F03545D8255413AB84C931F87D02C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Endless;
-			target = EAD3976F00CF5ADA330115072C2CF87D /* Endless */;
+			target = 76F60D32109FB8DF4B7848547DE32AEB /* Endless */;
 			targetProxy = 4173C27B4D97CA2D792D4194E9A2AF19 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -496,9 +504,9 @@
 			};
 			name = Debug;
 		};
-		89E2E64DBCF3F4D19DE147C768D1212E /* Release */ = {
+		7E2A1558DEFEC3C1C38B2181BD990A2F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B3A50C30AF0B8B2B951EB098795DAC40 /* Endless.xcconfig */;
+			baseConfigurationReference = C5EE462A0268AA1F6BAB7C20CAF1D9C9 /* Endless.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -512,7 +520,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Endless/Endless-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Endless/Endless-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Endless/Endless.modulemap";
 				PRODUCT_MODULE_NAME = Endless;
@@ -527,37 +535,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		92A7C01B0A55AB0FBF91AA31C9AABEEC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B3A50C30AF0B8B2B951EB098795DAC40 /* Endless.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Endless/Endless-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Endless/Endless-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Endless/Endless.modulemap";
-				PRODUCT_MODULE_NAME = Endless;
-				PRODUCT_NAME = Endless;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 		AB4D69770D8ACE3A05E80BB3502666F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -650,6 +627,37 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		DF4D8130DDF5CBEBF29DBE7B7D172CF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5EE462A0268AA1F6BAB7C20CAF1D9C9 /* Endless.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Endless/Endless-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Endless/Endless-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Endless/Endless.modulemap";
+				PRODUCT_MODULE_NAME = Endless;
+				PRODUCT_NAME = Endless;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -753,15 +761,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1FED7DB0FEDFE253C2FB0B8F015EA9F7 /* Build configuration list for PBXNativeTarget "Endless" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				92A7C01B0A55AB0FBF91AA31C9AABEEC /* Debug */,
-				89E2E64DBCF3F4D19DE147C768D1212E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		22173DFAE4AC14580565483EDCB75AE0 /* Build configuration list for PBXNativeTarget "Pods-Endless_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -785,6 +784,15 @@
 			buildConfigurations = (
 				65C163C8437F4B010A60A544DA3625CB /* Debug */,
 				64614036EEE28CDD5392903B2469CE33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F379566BFF376080EFBE1CCB08EE0D54 /* Build configuration list for PBXNativeTarget "Endless" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF4D8130DDF5CBEBF29DBE7B7D172CF1 /* Debug */,
+				7E2A1558DEFEC3C1C38B2181BD990A2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
