@@ -1,20 +1,32 @@
 import UIKit
 
+public protocol IndicatorProtocol {
+    var selectedIndex: Int { get set }
+    func setup(with configuration: Configuration)
+}
 
-public final class Indicator: UIView {
+public final class Indicator: UIView, IndicatorProtocol {
+    public var selectedIndex = 0 {
+        didSet {
+            guard selectedIndex >= 0 else {
+                return
+            }
+            
+            guard selectedIndex < configuration!.numberOfPages else {
+                return
+            }
+            
+            let selectedIndexPath = IndexPath(row: selectedIndex, section: 0)
+            self.collectionView.selectItem(at: selectedIndexPath, animated: true, scrollPosition: .centeredHorizontally)
+        }
+    }
     
-    // Move this crap to configuration model
-    let widthOfItem: CGFloat = 10
-    let numberOfItems = 20
-    let maxNumberOfVisibleItems = 5 // This has to be odd
-    let spacingBetweenItems: CGFloat = 15
-    var selectedIndex = 0
-    
-    lazy var collectionView: UICollectionView = {
+    private var configuration: Configuration?
+    private lazy var collectionView: UICollectionView = {
         var collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.contentInset = .zero
-        collectionView.backgroundColor = UIColor.gray
+        collectionView.backgroundColor = .clear
         collectionView.allowsMultipleSelection = false
         (collectionView.collectionViewLayout as? UICollectionViewFlowLayout)?.scrollDirection = .horizontal
         collectionView.backgroundColor = UIColor.white
@@ -26,38 +38,10 @@ public final class Indicator: UIView {
         return collectionView
     }()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    public func setup(with configuration: Configuration) {
+        self.configuration = configuration
         setupConstraints()
         setupInitialSelection()
-    }
-    
-    override public func awakeFromNib() {
-        super.awakeFromNib()
-        setupConstraints()
-        setupInitialSelection()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-       super.init(coder: aDecoder)
-    }
-    
-    public func increment() {
-        guard selectedIndex > 0 else {
-            return
-        }
-        selectedIndex = selectedIndex - 1
-        let selectedIndexPath = IndexPath(row: selectedIndex, section: 0)
-        collectionView.selectItem(at: selectedIndexPath, animated: true, scrollPosition: .centeredHorizontally)
-    }
-    
-    public func decrement() {
-        guard selectedIndex < numberOfItems - 1 else {
-            return
-        }
-        selectedIndex = selectedIndex + 1
-        let selectedIndexPath = IndexPath(row: selectedIndex, section: 0)
-        collectionView.selectItem(at: selectedIndexPath, animated: true, scrollPosition: .centeredHorizontally)
     }
     
     public override func layoutSubviews() {
@@ -68,13 +52,18 @@ public final class Indicator: UIView {
 
 extension Indicator {
     private func setupConstraints() {
+        guard let configuration = self.configuration else {
+            return
+        }
+        
         addSubview(collectionView)
         collectionView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
         collectionView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
         collectionView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        let spacing = CGFloat(maxNumberOfVisibleItems - 1) * spacingBetweenItems
-        widthAnchor.constraint(equalToConstant: CGFloat(maxNumberOfVisibleItems) * widthOfItem + spacing).isActive = true
+        let spacing = CGFloat(configuration.maxNumberOfPages.rawValue - 1) * configuration.spacing
+        let widthOfItem = configuration.dotSize
+        widthAnchor.constraint(equalToConstant: CGFloat(configuration.maxNumberOfPages.rawValue) * widthOfItem + spacing).isActive = true
     }
     
     private func setupInitialSelection() {
@@ -89,7 +78,7 @@ extension Indicator: UICollectionViewDataSource {
     }
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return numberOfItems
+        return configuration?.numberOfPages ?? 0
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -106,18 +95,18 @@ extension Indicator: UIScrollViewDelegate {
 
 extension Indicator: UICollectionViewDelegateFlowLayout {
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: widthOfItem, height: collectionView.frame.height)
+        return CGSize(width: configuration?.dotSize ?? 0, height: collectionView.frame.height)
     }
     
     public func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         /**
             We just want to update the look if there are more items available then visible
          */
-        guard numberOfItems > maxNumberOfVisibleItems, indexPath.row != selectedIndex else {
+        guard configuration!.numberOfPages > configuration!.maxNumberOfPages.rawValue, indexPath.row != selectedIndex else {
             return
         }
         updateCellBeforeScrollUpdate(collectionView)
-        (cell as? IndicatorCell)?.state = .small
+        (cell as? IndicatorCell)?.update(state: .small, animated: false)
     }
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -125,7 +114,7 @@ extension Indicator: UICollectionViewDelegateFlowLayout {
     }
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return spacingBetweenItems
+        return configuration?.spacing ?? 0
     }
 }
 
@@ -136,20 +125,9 @@ extension Indicator {
     }
     
     private func udpateCellsAfterScrolling() {
-        let visibleCells = self.collectionView.visibleCells
-        let cellAndPaths: [CellAndPath] = visibleCells.compactMap { cell in
-            guard let indexPath = collectionView.indexPath(for: cell) else {
-                return nil
-            }
-            
-            guard let indicatorCell = cell as? IndicatorCell else {
-                return nil
-            }
-            
-            return CellAndPath(indicatorCell: indicatorCell, indexPath: indexPath)
-            }.sorted(by: {
-                return $0.indexPath.row < $1.indexPath.row
-            })
+        
+        // Get All visible cells
+        let cellAndPaths = getAllVisibleCellsAndPaths()
         
         if let first = cellAndPaths.first {
             guard first.indexPath.row != selectedIndex else {
@@ -157,9 +135,9 @@ extension Indicator {
             }
             
             if first.indexPath.row == 0 {
-                first.indicatorCell.state = .unselected
+                first.indicatorCell.update(state: .unselected)
             } else {
-                first.indicatorCell.state = .small
+                first.indicatorCell.update(state: .small)
             }
         }
         
@@ -168,10 +146,25 @@ extension Indicator {
                 return
             }
             
-            if last.indexPath.row == numberOfItems - 1 {
-                last.indicatorCell.state = .unselected
+            if last.indexPath.row == configuration!.numberOfPages - 1 {
+                last.indicatorCell.update(state: .unselected)
             } else {
-                last.indicatorCell.state = .small
+                last.indicatorCell.update(state: .small)
+            }
+        }
+        
+        let visibleCells = collectionView.visibleCells
+        for cell in visibleCells {
+            guard let indexPath = collectionView.indexPath(for: cell) else {
+                continue
+            }
+            
+            guard let indicatorCell = cell as? IndicatorCell else {
+                continue
+            }
+            
+            if indexPath.row == selectedIndex {
+                indicatorCell.update(state: .selected)
             }
         }
     }
@@ -189,9 +182,27 @@ extension Indicator {
             }
             
             if indexPath.row != selectedIndex {
-                indicatorCell.state = .unselected
+                indicatorCell.update(state: .unselected)
             }
         }
+    }
+    
+    private func getAllVisibleCellsAndPaths() -> [CellAndPath] {
+        let visibleCells = self.collectionView.visibleCells
+        let cellAndPaths: [CellAndPath] = visibleCells.compactMap { cell in
+            guard let indexPath = collectionView.indexPath(for: cell) else {
+                return nil
+            }
+            
+            guard let indicatorCell = cell as? IndicatorCell else {
+                return nil
+            }
+            
+            return CellAndPath(indicatorCell: indicatorCell, indexPath: indexPath)
+        }.sorted(by: {
+            return $0.indexPath.row < $1.indexPath.row
+        })
+        return cellAndPaths
     }
 }
 

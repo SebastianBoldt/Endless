@@ -1,15 +1,13 @@
 import UIKit
 
 final class IndicatorCell: UICollectionViewCell {
-    var state: IndicatorCellState = .unselected  {
-        didSet {
-            update()
-        }
-    }
+    private var state: IndicatorCellState = .unselected
+
     
     override var isSelected: Bool {
         didSet {
-            state = isSelected ? .selected : .unselected
+            let newState: IndicatorCellState = isSelected ? .selected : .unselected
+            update(state: newState)
         }
     }
     
@@ -51,24 +49,36 @@ final class IndicatorCell: UICollectionViewCell {
 extension IndicatorCell {
     func setup() {
         isUserInteractionEnabled = false
-        backgroundColor = .white
-        layer.borderColor = UIColor.lightGray.cgColor
-        layer.borderWidth = 1.0
+        backgroundColor = .clear
         layer.addSublayer(dotLayer)
-        state = .unselected
+        update(state: .unselected)
     }
     
-    func update() {
-        switch state {
-            case .unselected:
-                dotLayer.fillColor = UIColor.lightGray.cgColor
-                dotLayer.transform = CATransform3DMakeScale(0.6, 0.6, 0.6)
-            case .selected:
-                dotLayer.fillColor = UIColor.darkGray.cgColor
-                dotLayer.transform = CATransform3DMakeScale(1.0, 1.0, 1.0)
-            case .small:
-                dotLayer.fillColor = UIColor.lightGray.cgColor
-                dotLayer.transform = CATransform3DMakeScale(0.2, 0.2, 0.2)
+    func update(state: IndicatorCellState, animated: Bool = true) {
+        self.state = state
+        let updateBlock = {
+            switch self.state {
+                case .unselected:
+                    self.dotLayer.fillColor = UIColor.lightGray.cgColor
+                    self.dotLayer.transform = CATransform3DMakeScale(0.6, 0.6, 0.6)
+                case .selected:
+                    self.dotLayer.fillColor = UIColor.red.cgColor
+                    self.dotLayer.transform = CATransform3DMakeScale(1.0, 1.0, 1.0)
+                case .small:
+                    self.dotLayer.fillColor = UIColor.lightGray.cgColor
+                    self.dotLayer.transform = CATransform3DMakeScale(0.2, 0.2, 0.2)
+                }
+        }
+        
+        /**
+            CALayer aniamted automatically so we need a way to disable this
+        */
+        if animated {
+            updateBlock()
+        } else {
+            CALayer.performWithoutAnimation {
+                updateBlock()
+            }
         }
     }
 }

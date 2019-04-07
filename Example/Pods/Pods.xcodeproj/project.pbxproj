@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		013D0177EA6830764D89FE8470DF9553 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
 		0862BE5E5B24F76FC401857613DE7973 /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7D1A327046F8F1972A079BA4929238 /* Metrics.swift */; };
+		1502BA9C2259F81C0013A149 /* CALayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1502BA9B2259F81C0013A149 /* CALayer+Extension.swift */; };
 		26786E6B6CF1001A9F225FD31E5B1716 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC00CF88448BFE2EC07228B8F5578EF0 /* Configuration.swift */; };
 		33DB749BCB8F986BE7BB7DB4D140613B /* Endless-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9639851AD93081396716527EDA7949B0 /* Endless-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3695B880338E9F23F4A46E17FD98E283 /* Pods-Endless_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CC2F4569251B91C91A4B962A6104CF /* Pods-Endless_Tests-dummy.m */; };
@@ -42,9 +43,10 @@
 
 /* Begin PBXFileReference section */
 		115F58AB98EAA756EDD74A5C3C10BF99 /* IndicatorCellState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IndicatorCellState.swift; sourceTree = "<group>"; };
+		1502BA9B2259F81C0013A149 /* CALayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extension.swift"; sourceTree = "<group>"; };
 		1778199D5A60A3129E68A8DCB50DF817 /* Pods-Endless_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Endless_Tests.modulemap"; sourceTree = "<group>"; };
 		1806796D17E1E0095353E06B2E709E84 /* Pods-Endless_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Endless_Example.release.xcconfig"; sourceTree = "<group>"; };
-		1A6349BE51C5B8BF1AE555400E4D28F5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		1A6349BE51C5B8BF1AE555400E4D28F5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1F532558D343E1F2C653571702CCFE3F /* Pods-Endless_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Endless_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		2B03AFF001DF6D1EDFF948519376913D /* Pods-Endless_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Endless_Example-Info.plist"; sourceTree = "<group>"; };
 		3576575055C96328F5A8FEBFD2E82C40 /* IndicatorCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IndicatorCell.swift; sourceTree = "<group>"; };
@@ -54,13 +56,13 @@
 		5AB041E0A1D2AFC66B3805F76B7BA4FB /* Endless-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Endless-Info.plist"; sourceTree = "<group>"; };
 		5F863B5C6ED6A7A2AF342FAC3CA65D72 /* Pods-Endless_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Endless_Example.modulemap"; sourceTree = "<group>"; };
 		757A4BACD277CED1BB1D8E2A1A09083A /* Pods-Endless_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Endless_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		8009DDBFDB0629D7D046BD9628A067A8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		8009DDBFDB0629D7D046BD9628A067A8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		9639851AD93081396716527EDA7949B0 /* Endless-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Endless-umbrella.h"; sourceTree = "<group>"; };
 		989E0E3C2301E3CF925F58F9D10F6E80 /* Endless-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Endless-dummy.m"; sourceTree = "<group>"; };
-		98BA584802764FEA4886CFEA9BD51568 /* Pods_Endless_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Endless_Tests.framework; path = "Pods-Endless_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9DC2C6B8809A5FD19DD78147BD707070 /* Endless.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = Endless.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9F0D54C0D9FADA0037E83C5A6883F24B /* Endless.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Endless.framework; path = Endless.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		98BA584802764FEA4886CFEA9BD51568 /* Pods_Endless_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Endless_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9DC2C6B8809A5FD19DD78147BD707070 /* Endless.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = Endless.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9F0D54C0D9FADA0037E83C5A6883F24B /* Endless.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Endless.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A12CC839B216919C6C4AA6B9B8E9D77E /* Pods-Endless_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Endless_Example-dummy.m"; sourceTree = "<group>"; };
 		A74C16C0647457F44EE41ED8296989DA /* Pods-Endless_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Endless_Tests-umbrella.h"; sourceTree = "<group>"; };
 		B3BA0250867B64346D973B40D6914796 /* Indicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Indicator.swift; sourceTree = "<group>"; };
@@ -75,7 +77,7 @@
 		DB87393C588838BCC201D4D368BFA0F1 /* Pods-Endless_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Endless_Example-frameworks.sh"; sourceTree = "<group>"; };
 		DC00CF88448BFE2EC07228B8F5578EF0 /* Configuration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		E148C9523B23A3E42C0C8A00918CB6E0 /* Endless.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Endless.modulemap; sourceTree = "<group>"; };
-		E23EA5D890327E8039B5D8A0C5B1E8C7 /* Pods_Endless_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Endless_Example.framework; path = "Pods-Endless_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E23EA5D890327E8039B5D8A0C5B1E8C7 /* Pods_Endless_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Endless_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE5E7F680683D33B69D2F581210A8DA2 /* Pods-Endless_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Endless_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +109,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1502BA9A2259F8000013A149 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1502BA9B2259F81C0013A149 /* CALayer+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		1785F931DA2A84042116586B66A315AE /* Pods-Endless_Example */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +163,7 @@
 		49EABE8F13966CE745F6AD03CA7589F5 /* private */ = {
 			isa = PBXGroup;
 			children = (
+				1502BA9A2259F8000013A149 /* Extensions */,
 				115F58AB98EAA756EDD74A5C3C10BF99 /* IndicatorCellState.swift */,
 				BC7D1A327046F8F1972A079BA4929238 /* Metrics.swift */,
 			);
@@ -351,6 +362,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
@@ -404,6 +416,7 @@
 			files = (
 				26786E6B6CF1001A9F225FD31E5B1716 /* Configuration.swift in Sources */,
 				7DD044BDCB80C24E13BD5AC9357B2406 /* Endless-dummy.m in Sources */,
+				1502BA9C2259F81C0013A149 /* CALayer+Extension.swift in Sources */,
 				F84340F11129282DDE3D14AF20F18C82 /* Indicator.swift in Sources */,
 				95B81D233CA8C76F27EFEF341B17DB4C /* IndicatorCell.swift in Sources */,
 				989E85E803C12AF1DB89C7C82A5D8811 /* IndicatorCellState.swift in Sources */,
@@ -717,8 +730,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.2;
 				SYMROOT = "${SRCROOT}/../build";
 			};
