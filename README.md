@@ -13,6 +13,10 @@ Endless is a lighweight endless page indicator based on UICollectionView and CAS
 <a href="https://en.wikipedia.org/wiki/MIT_License"><img src="https://img.shields.io/badge/license-MIT-lightgray.svg?longCache=true&style=flat-square" alt="license" /></a>
 
 ## How to use
+<p align="center">
+    <img src="https://github.com/SebastianBoldt/Endless/blob/master/Github/indicator.gif?raw=true" width="400";
+</p>
+
 
 Create a Endless View in Storyboard or Code without a widthConstraint or heightConstraint.
 It will calculate its intrinsic size at runtime for you. Just position it where you want.
