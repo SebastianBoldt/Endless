@@ -18,10 +18,10 @@ Endless is a lighweight endless page indicator based on UICollectionView and CAS
 </p>
 
 
-Create a Endless View in Storyboard or Code without a widthConstraint or heightConstraint.
-It will calculate its intrinsic size at runtime for you. Just position it where you want.
+Create an Endless-Indicator in your storyboard or code without a width  or height constraint.
+'Endless' will calculate its intrinsic size at runtime for you. You just need to set the origin.
 
-```
+```swift
 class ViewController: UIViewController {
     @IBOutlet weak private var indicator: Endless.Indicator!
 
