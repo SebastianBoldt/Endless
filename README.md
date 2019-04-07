@@ -14,18 +14,24 @@ Endless is a lighweight endless page indicator based on UICollectionView and CAS
 
 ## How to use
 
-Create a Endless View in Storyboard or Code without a widthConstraint.
-It will calculate its intrinsic size at runtime for you.
+Create a Endless View in Storyboard or Code without a widthConstraint or heightConstraint.
+It will calculate its intrinsic size at runtime for you. Just position it where you want.
 
 ```
-let configuration = Endless.Configuration(numberOfPages: 200,
-                                          maxNumberOfPages: .five,
-                                          dotColor: .lightGray,
-                                          dotSize: 10,
-                                          spacing: 10)
-                                          
-indicator?.setup(with: configuration)
+class ViewController: UIViewController {
+    @IBOutlet weak private var indicator: Endless.Indicator!
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let configuration = Endless.Configuration(numberOfDots: 20,
+                                                  maxNumberOfDots: .seven,
+                                                  selectedDotColor: .darkGray,
+                                                  unselectedDotColor: .lightGray,
+                                                  dotSize: 10,
+                                                  spacing: 10)
+        indicator?.setup(with: configuration)
+    }
+}
 ```
 
 ## Example

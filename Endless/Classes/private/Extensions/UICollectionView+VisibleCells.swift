@@ -4,7 +4,7 @@ extension UICollectionView {
     func getAllVisibleCellsAndPaths() -> [(cell: IndicatorCell, indexPath: IndexPath)] {
         let visibleCells = self.visibleCells
         let cellAndPaths: [(cell: IndicatorCell, indexPath: IndexPath)] = visibleCells.compactMap { cell in
-            guard let indexPath = collectionView.indexPath(for: cell) else {
+            guard let indexPath = self.indexPath(for: cell) else {
                 return nil
             }
             

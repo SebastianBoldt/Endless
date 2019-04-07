@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		013D0177EA6830764D89FE8470DF9553 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
-		0862BE5E5B24F76FC401857613DE7973 /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7D1A327046F8F1972A079BA4929238 /* Metrics.swift */; };
 		1502BA9C2259F81C0013A149 /* CALayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1502BA9B2259F81C0013A149 /* CALayer+Extension.swift */; };
 		1502BA9E2259FD5B0013A149 /* MaxNumberOfDots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1502BA9D2259FD5B0013A149 /* MaxNumberOfDots.swift */; };
 		1502BAA0225A041F0013A149 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1502BA9F225A041F0013A149 /* Constants.swift */; };
 		1502BAA2225A057A0013A149 /* UICollectionView+VisibleCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1502BAA1225A057A0013A149 /* UICollectionView+VisibleCells.swift */; };
+		159A805A225A074E0046B195 /* IndicatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159A8059225A074E0046B195 /* IndicatorProtocol.swift */; };
+		159A805C225A085C0046B195 /* IndicatorCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159A805B225A085C0046B195 /* IndicatorCellProtocol.swift */; };
 		26786E6B6CF1001A9F225FD31E5B1716 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC00CF88448BFE2EC07228B8F5578EF0 /* Configuration.swift */; };
 		33DB749BCB8F986BE7BB7DB4D140613B /* Endless-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9639851AD93081396716527EDA7949B0 /* Endless-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3695B880338E9F23F4A46E17FD98E283 /* Pods-Endless_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CC2F4569251B91C91A4B962A6104CF /* Pods-Endless_Tests-dummy.m */; };
@@ -50,6 +51,8 @@
 		1502BA9D2259FD5B0013A149 /* MaxNumberOfDots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxNumberOfDots.swift; sourceTree = "<group>"; };
 		1502BA9F225A041F0013A149 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1502BAA1225A057A0013A149 /* UICollectionView+VisibleCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+VisibleCells.swift"; sourceTree = "<group>"; };
+		159A8059225A074E0046B195 /* IndicatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorProtocol.swift; sourceTree = "<group>"; };
+		159A805B225A085C0046B195 /* IndicatorCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorCellProtocol.swift; sourceTree = "<group>"; };
 		1778199D5A60A3129E68A8DCB50DF817 /* Pods-Endless_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Endless_Tests.modulemap"; sourceTree = "<group>"; };
 		1806796D17E1E0095353E06B2E709E84 /* Pods-Endless_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Endless_Example.release.xcconfig"; sourceTree = "<group>"; };
 		1A6349BE51C5B8BF1AE555400E4D28F5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -73,7 +76,6 @@
 		A74C16C0647457F44EE41ED8296989DA /* Pods-Endless_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Endless_Tests-umbrella.h"; sourceTree = "<group>"; };
 		B3BA0250867B64346D973B40D6914796 /* Indicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Indicator.swift; sourceTree = "<group>"; };
 		B99AF101FD55886DBBFD73A7AE69965A /* Pods-Endless_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Endless_Example-umbrella.h"; sourceTree = "<group>"; };
-		BC7D1A327046F8F1972A079BA4929238 /* Metrics.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
 		C1CC2F4569251B91C91A4B962A6104CF /* Pods-Endless_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Endless_Tests-dummy.m"; sourceTree = "<group>"; };
 		C5DF478F8CFBDE51A47FD4D70DC99DD2 /* Pods-Endless_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Endless_Tests-Info.plist"; sourceTree = "<group>"; };
 		C5EE462A0268AA1F6BAB7C20CAF1D9C9 /* Endless.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Endless.xcconfig; sourceTree = "<group>"; };
@@ -170,10 +172,11 @@
 		49EABE8F13966CE745F6AD03CA7589F5 /* private */ = {
 			isa = PBXGroup;
 			children = (
-				1502BA9A2259F8000013A149 /* Extensions */,
-				115F58AB98EAA756EDD74A5C3C10BF99 /* IndicatorCellState.swift */,
-				BC7D1A327046F8F1972A079BA4929238 /* Metrics.swift */,
 				1502BA9F225A041F0013A149 /* Constants.swift */,
+				115F58AB98EAA756EDD74A5C3C10BF99 /* IndicatorCellState.swift */,
+				3576575055C96328F5A8FEBFD2E82C40 /* IndicatorCell.swift */,
+				159A805B225A085C0046B195 /* IndicatorCellProtocol.swift */,
+				1502BA9A2259F8000013A149 /* Extensions */,
 			);
 			name = private;
 			path = Endless/Classes/private;
@@ -205,9 +208,9 @@
 		82368BE60990A1F09EB9B671BE6904D9 /* public */ = {
 			isa = PBXGroup;
 			children = (
-				DC00CF88448BFE2EC07228B8F5578EF0 /* Configuration.swift */,
 				B3BA0250867B64346D973B40D6914796 /* Indicator.swift */,
-				3576575055C96328F5A8FEBFD2E82C40 /* IndicatorCell.swift */,
+				159A8059225A074E0046B195 /* IndicatorProtocol.swift */,
+				DC00CF88448BFE2EC07228B8F5578EF0 /* Configuration.swift */,
 				1502BA9D2259FD5B0013A149 /* MaxNumberOfDots.swift */,
 			);
 			name = public;
@@ -428,9 +431,10 @@
 				1502BA9C2259F81C0013A149 /* CALayer+Extension.swift in Sources */,
 				F84340F11129282DDE3D14AF20F18C82 /* Indicator.swift in Sources */,
 				95B81D233CA8C76F27EFEF341B17DB4C /* IndicatorCell.swift in Sources */,
+				159A805A225A074E0046B195 /* IndicatorProtocol.swift in Sources */,
+				159A805C225A085C0046B195 /* IndicatorCellProtocol.swift in Sources */,
 				989E85E803C12AF1DB89C7C82A5D8811 /* IndicatorCellState.swift in Sources */,
 				1502BA9E2259FD5B0013A149 /* MaxNumberOfDots.swift in Sources */,
-				0862BE5E5B24F76FC401857613DE7973 /* Metrics.swift in Sources */,
 				1502BAA0225A041F0013A149 /* Constants.swift in Sources */,
 				1502BAA2225A057A0013A149 /* UICollectionView+VisibleCells.swift in Sources */,
 			);
