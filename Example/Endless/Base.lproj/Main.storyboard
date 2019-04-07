@@ -25,7 +25,7 @@
                                 <rect key="frame" x="16" y="41" width="152" height="77"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.86318271400000002" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="-"/>
+                                <state key="normal" title="+"/>
                                 <connections>
                                     <action selector="decrement:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ABU-p2-85q"/>
                                 </connections>
@@ -34,17 +34,16 @@
                                 <rect key="frame" x="196" y="41" width="152" height="77"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.86318271400000002" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="+"/>
+                                <state key="normal" title="-"/>
                                 <connections>
                                     <action selector="increment:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="hN6-eD-X5W"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QTm-Qn-kkB" customClass="Indicator" customModule="Endless">
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="QTm-Qn-kkB" customClass="Indicator" customModule="Endless">
                                 <rect key="frame" x="87.5" y="308.5" width="200" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="aPR-6N-yao"/>
-                                    <constraint firstAttribute="width" constant="200" id="bCo-jQ-Z4Z"/>
                                 </constraints>
                             </view>
                         </subviews>

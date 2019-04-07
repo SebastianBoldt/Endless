@@ -52,21 +52,23 @@ extension IndicatorCell {
     func setup() {
         isUserInteractionEnabled = false
         backgroundColor = .white
+        layer.borderColor = UIColor.lightGray.cgColor
+        layer.borderWidth = 1.0
         layer.addSublayer(dotLayer)
         state = .unselected
     }
     
     func update() {
         switch state {
-        case .unselected:
-            dotLayer.fillColor = UIColor.lightGray.cgColor
-            dotLayer.transform = CATransform3DMakeScale(1, 1, 1)
-        case .selected:
-            dotLayer.fillColor = UIColor.darkGray.cgColor
-            dotLayer.transform = CATransform3DMakeScale(1, 1, 1)
-        case .small:
-            dotLayer.fillColor = UIColor.lightGray.cgColor
-            dotLayer.transform = CATransform3DMakeScale(0.2, 0.2, 0.2)
+            case .unselected:
+                dotLayer.fillColor = UIColor.lightGray.cgColor
+                dotLayer.transform = CATransform3DMakeScale(0.6, 0.6, 0.6)
+            case .selected:
+                dotLayer.fillColor = UIColor.darkGray.cgColor
+                dotLayer.transform = CATransform3DMakeScale(1.0, 1.0, 1.0)
+            case .small:
+                dotLayer.fillColor = UIColor.lightGray.cgColor
+                dotLayer.transform = CATransform3DMakeScale(0.2, 0.2, 0.2)
         }
     }
 }

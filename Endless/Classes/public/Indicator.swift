@@ -1,9 +1,20 @@
 import UIKit
 
+
 public final class Indicator: UIView {
+    
+    // Move this crap to configuration model
+    let widthOfItem: CGFloat = 10
+    let numberOfItems = 20
+    let maxNumberOfVisibleItems = 5 // This has to be odd
+    let spacingBetweenItems: CGFloat = 15
+    var selectedIndex = 0
+    
     lazy var collectionView: UICollectionView = {
         var collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.showsHorizontalScrollIndicator = false
+        collectionView.contentInset = .zero
+        collectionView.backgroundColor = UIColor.gray
         collectionView.allowsMultipleSelection = false
         (collectionView.collectionViewLayout as? UICollectionViewFlowLayout)?.scrollDirection = .horizontal
         collectionView.backgroundColor = UIColor.white
@@ -15,33 +26,20 @@ public final class Indicator: UIView {
         return collectionView
     }()
     
-    let numberOfItems = 20
-    let maxNumberOfVisibleItems = 5 // This has to be odd
-    var selectedIndex = 0
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setup()
+        setupConstraints()
+        setupInitialSelection()
     }
     
     override public func awakeFromNib() {
         super.awakeFromNib()
-        setup()
+        setupConstraints()
+        setupInitialSelection()
     }
     
     required init?(coder aDecoder: NSCoder) {
        super.init(coder: aDecoder)
-    }
-    
-    func setup() {
-        addSubview(collectionView)
-        collectionView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
-        collectionView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
-        collectionView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        collectionView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        let selectedIndexPath = IndexPath(row: 0, section: 0)
-        collectionView.selectItem(at: selectedIndexPath, animated: true, scrollPosition: .centeredHorizontally)
-        prepareInsets()
     }
     
     public func increment() {
@@ -62,14 +60,26 @@ public final class Indicator: UIView {
         collectionView.selectItem(at: selectedIndexPath, animated: true, scrollPosition: .centeredHorizontally)
     }
     
-    private func prepareInsets() {
-        let leftInset = max(0,((collectionView.frame.width - collectionView.contentSize.width) / 2))
-        collectionView.contentInset.left = leftInset
-    }
-    
     public override func layoutSubviews() {
         super.layoutSubviews()
         collectionView.collectionViewLayout.invalidateLayout()
+    }
+}
+
+extension Indicator {
+    private func setupConstraints() {
+        addSubview(collectionView)
+        collectionView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        collectionView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+        collectionView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        collectionView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        let spacing = CGFloat(maxNumberOfVisibleItems - 1) * spacingBetweenItems
+        widthAnchor.constraint(equalToConstant: CGFloat(maxNumberOfVisibleItems) * widthOfItem + spacing).isActive = true
+    }
+    
+    private func setupInitialSelection() {
+        let selectedIndexPath = IndexPath(row: 0, section: 0)
+        collectionView.selectItem(at: selectedIndexPath, animated: true, scrollPosition: .centeredHorizontally)
     }
 }
 
@@ -96,15 +106,14 @@ extension Indicator: UIScrollViewDelegate {
 
 extension Indicator: UICollectionViewDelegateFlowLayout {
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size = collectionView.frame.width / CGFloat(maxNumberOfVisibleItems)
-        return CGSize(width: size, height: size)
+        return CGSize(width: widthOfItem, height: collectionView.frame.height)
     }
     
     public func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         /**
             We just want to update the look if there are more items available then visible
          */
-        guard numberOfItems > maxNumberOfVisibleItems else {
+        guard numberOfItems > maxNumberOfVisibleItems, indexPath.row != selectedIndex else {
             return
         }
         updateCellBeforeScrollUpdate(collectionView)
@@ -115,8 +124,8 @@ extension Indicator: UICollectionViewDelegateFlowLayout {
         return .zero
     }
     
-    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return spacingBetweenItems
     }
 }
 
