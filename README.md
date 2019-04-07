@@ -1,6 +1,6 @@
 # Endless
 
-Endless is a lighweight endless page indicator.
+Endless is a lighweight endless page indicator based on UICollectionView and CAShapeLayers.
 
 ![Endless: Airbnb or Instragram like Page Indicator](https://github.com/SebastianBoldt/Endless/blob/master/Github/banner.png?raw=true)
 
@@ -14,11 +14,17 @@ Endless is a lighweight endless page indicator.
 
 ## How to use
 
-Create a Endless Configuration
-```
-let configuration = Endless.Configuration()
-let endlessIndicator = Endless.Indicator()
+Create a Endless View in Storyboard or Code without a widthConstraint.
+It will calculate its intrinsic size at runtime for you.
 
+```
+let configuration = Endless.Configuration(numberOfPages: 200,
+                                          maxNumberOfPages: .five,
+                                          dotColor: .lightGray,
+                                          dotSize: 10,
+                                          spacing: 10)
+                                          
+indicator?.setup(with: configuration)
 
 ```
 
@@ -26,16 +32,9 @@ let endlessIndicator = Endless.Indicator()
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## Requirements
-
 ## Installation
 
-Endless is available through [CocoaPods](https://cocoapods.org). To install
-it, simply add the following line to your Podfile:
-
-```ruby
-pod 'Endless'
-```
+It will be available via Cocoapods soon.
 
 ## Author
 
