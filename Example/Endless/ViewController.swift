@@ -6,8 +6,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let configuration = Endless.Configuration(numberOfPages: 200,
-                                                  maxNumberOfPages: .five,
+        let configuration = Endless.Configuration(numberOfDots: 200,
+                                                  maxNumberOfDots: .five,
                                                   dotColor: .lightGray,
                                                   dotSize: 10,
                                                   spacing: 10)
