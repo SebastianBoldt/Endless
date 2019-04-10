@@ -44,7 +44,11 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Installation
 
-It will be available via Cocoapods soon.
+Endless is available through CocoaPods. To install it, simply add the following line to your Podfile:
+
+```ruby
+pod 'Endless'
+```
 
 ## Author
 
