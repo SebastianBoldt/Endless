@@ -7,10 +7,10 @@ Pod::Spec.new do |s|
     Endless is a lighweight endless page indicator.
                        DESC
 
-  s.homepage         = 'https://github.com/self.dealloc@protonmail.com/Endless'
+  s.homepage         = 'https://www.sebastianboldt.com'
+  s.author           = { 'Sebastian Boldt' => 'self.dealloc@icloud.com' }
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'self.dealloc@protonmail.com' => 'self.dealloc@googlemail.com' }
-  s.source           = { :git => 'https://github.com/self.dealloc@protonmail.com/Endless.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/SebastianBoldt/Endless.git', :tag => s.version.to_s }
   s.ios.deployment_target = '9.0'
   s.source_files = 'Endless/Classes/**/*'
 end

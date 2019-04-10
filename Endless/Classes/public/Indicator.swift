@@ -28,6 +28,7 @@ public final class Indicator: UIView, IndicatorProtocol {
         self.configuration = configuration
         setupConstraints()
         setupInitialSelection()
+        updateCells()
     }
     
     public override func layoutSubviews() {
@@ -52,12 +53,13 @@ extension Indicator {
         let heightOfItem = configuration.dotSize
         heightAnchor.constraint(equalToConstant: heightOfItem).isActive = true
         widthAnchor.constraint(equalToConstant: CGFloat(configuration.maxNumberOfDots.rawValue) * widthOfItem + spacing).isActive = true
+        setNeedsLayout()
+        layoutIfNeeded()
     }
     
     private func setupInitialSelection() {
         let selectedIndexPath = IndexPath(row: 0, section: 0)
         collectionView.selectItem(at: selectedIndexPath, animated: false, scrollPosition: .centeredHorizontally)
-        updateCells()
     }
 }
 
@@ -87,7 +89,6 @@ extension Indicator: UICollectionViewDelegateFlowLayout {
     }
     
     public func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        updateCells()
         (cell as? IndicatorCell)?.update(state: .small, animated: false)
     }
     
@@ -124,7 +125,7 @@ extension Indicator {
         }
         
         let cellAndPaths = collectionView.getAllVisibleCellsAndPaths()
-    
+        
         for (index,cellAndPath) in cellAndPaths.enumerated() {
             // Update the cell at the selected index
             if cellAndPath.indexPath.row == selectedIndex {
