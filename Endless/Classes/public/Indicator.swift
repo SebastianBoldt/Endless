@@ -9,7 +9,6 @@ public final class Indicator: UIView, IndicatorProtocol {
         collectionView.backgroundColor = .clear
         collectionView.allowsMultipleSelection = false
         (collectionView.collectionViewLayout as? UICollectionViewFlowLayout)?.scrollDirection = .horizontal
-        collectionView.backgroundColor = UIColor.white
         collectionView.register(IndicatorCell.self, forCellWithReuseIdentifier: Constants.indicatorCellReuseIdentifier)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.isUserInteractionEnabled = false
